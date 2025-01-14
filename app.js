@@ -28,12 +28,12 @@ const superheroes = [
 
 
 const superHeroeSelector = new Promise((resolve, reject) =>{
-    const superHeroIndex = 1;
+    const superHeroIndex = 5;
     if(superheroes.find(({id})=>id === superHeroIndex)){
         const {name: name, strength: strength} = superheroes.find(({id})=>id === superHeroIndex)
         resolve(`The name of the superho chosen is ${name} and his strength is ${strength}`);
     } else {
-        reject("The promise was rejected.")
+        reject("The superheroe could not be found..")
     }
 })
 
@@ -46,6 +46,6 @@ superHeroeSelector.then( (result) =>{
     console.log(error)
 })
 .finally(()=>{
-    console.log("The promise was completed.")
+    console.log("The query was completed!.")
 })
 
